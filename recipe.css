@@ -1,0 +1,34 @@
+body {
+	background-color: #FFEED3;
+}
+
+h1 {
+	color:#754C00;
+	font-size: 48px;
+	font-family:Helvetica, Verdana, sans-serif;
+				/* plan A plan B plan c */
+}
+
+ul li {
+	color:#754C00;
+	font-size: 18px;
+	font-family:Verdana, sans-serif;
+}
+
+h2 {
+	color:#540083;
+	font-size: 20px;
+	font-family: Verdana, sans-serif;
+}
+
+h3 {
+	color:#351700;
+	font-size: 16px;
+	font-family: Verdana, sans-serif;
+}
+
+p {
+	color:#351700;
+	font-size: 14px;
+	font-family: Verdana, sans-serif;
+}
