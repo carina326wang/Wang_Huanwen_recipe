@@ -96,4 +96,6 @@ p {
 	font-size: 14px;
 	font-family: 'Roboto', Verdana, sans-serif;
 	margin-bottom: 25px;
+	line-height: 1.3em
+	/* don't forget line-height for paragraph */
 }
