@@ -56,8 +56,19 @@ em {
 	font-style: italic;
 }
 
+*, *:before, *:after{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+}
+/* fit 2 columns  */
+
 /* End CSS Reset */
 
+
+body {
+	background-color: #fffde6;
+}
 
 #container {
 	width: 1024px;
@@ -65,8 +76,7 @@ em {
 }
 
 header {
-	background-color: #ffffff;
-	overflow: hidden;
+		overflow: hidden;
 }
 
 #title {
@@ -79,12 +89,13 @@ header {
 }
 
 header a{
-	color:#f08dc0;
-	text-decoration: none;
+	color:#47474a;
+	text-decoration: none; /* no underline */
 }
 
 header a:hover{
-	color:#ff54aa;
+	color:#ffa46b; /* roll over color change */
+	/* text-decoration: underline; optional */
 }
 
 header nav{
@@ -102,6 +113,63 @@ header nav ul li a{
 	font-family: 'Raleway', arial, sans-serif;
 	font-size: 20px;
 	font-weight: 300;
+}
+
+/* grid stuff */
+
+.grid{
+/* 	overflow:hidden; */
+	margin-top: 10px;
+}
+
+.grid:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+[class*='col-']{
+	float:left;
+	padding:5px 10px;
+}
+
+.col-1-3{
+	background-color: #d3deff;
+	width:33.33%;
+	float:left;
+	padding:5px 15px;
+}
+
+.col-2-3{
+	background-color: #ffdaed;
+	width:66.66%;
+	float:left;
+	padding:23px 20px;
+}
+
+/* type design */
+
+.grid h1{
+	font-size: 40px;
+	font-family: arial, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.grid p{
+	margin-bottom: 10px;
+	font-size: 17px;
+}
+
+.grid h2{
+	font-size: 25px;
+	font-family: arial, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.col-1-3 p{
+	font-style:italic;
 }
 
 
