@@ -87,7 +87,7 @@ header {
 	font-weight: 700;
 	float: left;
 	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 
 header a{
@@ -146,9 +146,30 @@ header nav ul li a{
 
 /* box */
 .box {
+	width: 200px;
+    padding: 15px;
+    margin: 20px 5px ;
 	border: 1px solid gray;
+	box-sizing: border-box;
+	background-color: #f8f8f8;
 }
 
+
+.box h2{
+	text-align: left;
+	font-family:'Play', arial, sans-serif;
+	font-size: 18px;
+	color:#ff952c;
+	margin-bottom: 5px;
+}
+
+.box ul li{
+	text-align: left;
+	font-family:'Ruluko', arial, sans-serif;
+	font-size: 16px;
+	color:blue;
+	margin-bottom: 5px;
+}
 
 /* type design */
 
@@ -164,6 +185,7 @@ header nav ul li a{
 	font-family:'Ruluko', arial, sans-serif;
 	font-size: 16px;
 	color:#424242;
+	line-height: 1.3em;
 }
 
 .grid h2{
@@ -175,10 +197,16 @@ header nav ul li a{
 
 
 
+/* Picture floats */
+.picFloatLeft {
+	float:left;
+	margin:0 20px 20px 0;
+}
 
-
-
-
+.picFloatRight {
+	float:right;
+	margin:0 20px 0px 20px;
+}
 
 
 
