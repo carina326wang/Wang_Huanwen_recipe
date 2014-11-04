@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* Well, if you go when the snowflakes storm */
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+*, *:before, *:after{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+}
+/* fit 2 columns  */
+
+/* End CSS Reset */
+
+body {
+	background-color: black;
+}
+
+#container {
+	background-color: #dce6d8;
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding:10px;
+}
+
+.grid {
+  margin: 40px 0 0px 0px;
+  /* Top Right Bottom Left */
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+[class*='col-'] {
+	float:left;
+	padding-right:10px;
+}
+
+[class*='col-']:last-of-type {
+	padding-right: 0px;
+}
+
+[class*='col-'] p {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.3em;
+	color: #000000;
+}
+
+.col-2-3 {
+	width: 66.66%;
+}
+
+.col-1-3 {
+	width: 33.33%;
+}
+
+.col-4-6 {
+	width: 66.66%;
+}
+
+.col-1-6 {
+	width: 16.66%;
+}
+
+.col-2-2 {
+	width: 100%;
+}
+
+/* optional padding */
+.grid circle {
+	padding:20px 0 0 0;
+}
+
+.grid circle [class*='col-']:last-of-type {
+	padding-right:0px;
+}
+.picFullCol {
+	width:100%;
+	height:auto;
+}
+
+.grid h1 {
+	font-size: 90px;
+	font-family: 'Arimo', arial, sans-serif;
+	font-weight: 700;
+	line-height: 0.8em; 
+	color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
