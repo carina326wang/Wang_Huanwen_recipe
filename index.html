@@ -6,6 +6,9 @@
 <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Crafty+Girls' rel='stylesheet' type='text/css'>
 
+<script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
+
 </head>
 
 <body>
@@ -65,79 +68,208 @@
 			
 			<div class="col-1-7">
 				<h2>1</h2>
+				<div id="jan-1-availability" class="availability" data-day="1">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>2</h2>
+				<div id="jan-2-availability" class="availability" data-day="2">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>3</h2>
+				<div id="jan-3-availability" class="availability" data-day="3">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 		</div>
 			
 		<div class="grid"> 
 			<div class="col-1-7">
 				<h2>4</h2>
+				<div id="jan-4-availability" class="availability" data-day="4">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>5</h2>
+				<div id="jan-5-availability" class="availability" data-day="5">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>6</h2>
+				<div id="jan-6-availability" class="availability" data-day="6">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>7</h2>
+				<div id="jan-7-availability" class="availability" data-day="7">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>8</h2>
+				<div id="jan-8-availability" class="availability" data-day="8">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>9</h2>
+				<div id="jan-9-availability" class="availability" data-day="9">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>10</h2>
+				<div id="jan-10-availability" class="availability" data-day="10">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 		</div>
 			
 		<div class="grid"> 
 			<div class="col-1-7">
 				<h2>11</h2>
+				<div id="jan-11-availability" class="availability" data-day="11">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>12</h2>
+				<div id="jan-12-availability" class="availability" data-day="12">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>13</h2>
+				<div id="jan-13-availability" class="availability" data-day="13">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>14</h2>
+				<div id="jan-14-availability" class="availability" data-day="14">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>15</h2>
+				<div id="jan-15-availability" class="availability" data-day="15">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>16</h2>
+				<div id="jan-16-availability" class="availability" data-day="16">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 			
 			<div class="col-1-7">
 				<h2>17</h2>
+				<div id="jan-17-availability" class="availability" data-day="17">
+					<a href="#openModal">Availability</a>
+				</div>
 			</div>
 		</div>	
 		
-</div> 
+</div>
 
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2 id="modal-title">Modal Box</h2>
 
+		<div id="modal-loading">
+			Loading reservations...
+		</div>
+
+		<div id="modal-content" style="display:none;">
+			<form action="">
+				<label for="modal-person-name">Your name:</label>
+				<input id="modal-person-name" type="text" name="name"><br>
+
+				<input id="radio-lunch" type="radio" name="meal" value="lunch">
+				<label for="radio-lunch">Lunch</label><br>
+
+				<input id="radio-afternoon-tea" type="radio" name="meal" value="afternoonTea">
+				<label for="radio-afternoon-tea">Afternoon tea</label><br>
+
+				<input id="radio-dinner" type="radio" name="meal" value="dinner">
+				<label for="radio-dinner">Dinner</label><br>
+
+				<div>
+					<button type="button" id="modal-submit">Book me!</button>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+
+<script>
+Parse.initialize("rsiGE2TI0oCXADiQTwUzB6h6cTiAWYUtLDDGTMwP", "wjSaS0qFpgQa31dsaroGUKd880pRrhvAPRThZ8fU");
+</script>
+<script src="bookme.js"></script>
+
+<script>
+	var availabilityDay = null;
+
+	$('.availability a').click(function() {
+		var $parent = $(this).parent();
+		availabilityDay = $parent.data('day');
+		$('#modal-title').text('January ' + availabilityDay);
+
+		showModalLoading();
+
+		queryReservationsForDay(availabilityDay, function(reservations) {
+			showModalContent();
+
+			$('#modal-content input').show();
+
+			// Do something with the returned Parse.Object values
+			for (var i = 0; i < reservations.length; i++) {
+				var reservation = reservations[i];
+				var meal = reservation.get('meal');
+				if (meal == 'lunch') {
+					$('#radio-lunch, label[for=radio-lunch]').hide();
+				} else if (meal == 'afternoonTea') {
+					$('#radio-afternoon-tea, label[for=radio-afternoon-tea]').hide();
+				} else if (meal == 'dinner') {
+					$('#radio-dinner, label[for=radio-dinner]').hide();
+				}
+			}
+		});
+	});
+
+	$('#modal-content button').click(function() {
+		var name = $('#modal-person-name').val();
+		var $selectedRadio = $('#modal-content input[name=meal]:checked');
+		if (name.length && $selectedRadio.length) {
+			var meal = $selectedRadio.val();
+
+			saveReservation(name, availabilityDay, meal);
+		}
+	});
+
+	var reservations = [];
+</script>
 
 </body>
