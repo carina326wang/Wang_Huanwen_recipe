@@ -76,22 +76,24 @@ body {
 	background-color: #ffffff;
 	opacity: 0.7;
 	filter: alpha(opacity=70);/* For IE8 and earlier */
+	padding:10px;
+	width: 1150px;
+	margin: 0 auto;
 }
 
 #container {
-	background-color: #ffffff;
-	opacity: 0.8;
-	filter: alpha(opacity=80);
+	background-color: #feeff4;
 	width: 1150px;
 	margin: 0 auto;
 	margin-top: 50px;
 	padding:10px;
+	border: 1px dotted gray;
 }
 
 .grid {
   margin: 0 0 10px 0;
   /* Top Right Bottom Left */
-   	padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 
@@ -115,7 +117,7 @@ body {
 	font-size: 20px;
 	line-height: 1.3em;
 	margin-bottom: 50px;
-	border-top: 1px solid gray;
+	border-top: 1px dotted gray;
 }
 
 .grid.front-row h2 {
