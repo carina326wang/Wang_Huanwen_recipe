@@ -129,12 +129,22 @@ body {
 }
 
 h1 {
-	font-family: 'Crafty Girls', Arial, sans-serif;
+	font-family: 'Indie Flower', Arial, sans-serif;
 	font-size: 35px;
 	line-height: 1.3em;
 	margin-left: 30px;
 	margin-top: 10px;
 }
+
+p {
+	font-family: 'Shadows Into Light', Arial, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.3em;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
 
 .availability img {
 	width: 40px;
