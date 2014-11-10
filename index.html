@@ -221,6 +221,9 @@
 			</form>
 		</div>
 
+		<div id="modal-success" style="display:none;">
+			<h2>Booked! *^_^*</h2>
+		</div>
 	</div>
 </div>
 
@@ -243,6 +246,7 @@ Parse.initialize("rsiGE2TI0oCXADiQTwUzB6h6cTiAWYUtLDDGTMwP", "wjSaS0qFpgQa31dsar
 			showModalContent();
 
 			$('#modal-content input').show();
+			$('#modal-content label').show();
 
 			// Do something with the returned Parse.Object values
 			for (var i = 0; i < reservations.length; i++) {
@@ -265,7 +269,14 @@ Parse.initialize("rsiGE2TI0oCXADiQTwUzB6h6cTiAWYUtLDDGTMwP", "wjSaS0qFpgQa31dsar
 		if (name.length && $selectedRadio.length) {
 			var meal = $selectedRadio.val();
 
-			saveReservation(name, availabilityDay, meal);
+			saveReservation(name, availabilityDay, meal, function(reservation) {
+				var $content = $('#modal-content');
+				showModalSuccess();
+
+				setTimeout(function() {
+					window.location.hash = '#close';
+				}, 1000);
+			});
 		}
 	});
 
