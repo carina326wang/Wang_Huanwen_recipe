@@ -113,7 +113,7 @@ body {
 }
 
 .grid h2 {
-	font-family: 'Crafty Girls', Arial, sans-serif;
+	font-family: 'Coming Soon', Arial, sans-serif;
 	font-size: 20px;
 	line-height: 1.3em;
 	margin-bottom: 50px;
@@ -122,7 +122,7 @@ body {
 
 .grid.front-row h2 {
 	font-size: 20px;
-	font-family: 'Coming Soon', Arial, sans-serif;
+	font-family: 'Indie Flower', Arial, sans-serif;
 	color: black;
 	margin-bottom: 20px;
 	border-top: 0px;
@@ -137,8 +137,7 @@ h1 {
 }
 
 p {
-	font-family: 'Shadows Into Light', Arial, sans-serif;
-	font-weight: bold;
+	font-family: 'Coming Soon', Arial, sans-serif;
 	font-size: 20px;
 	line-height: 1.3em;
 	margin-left: 30px;
