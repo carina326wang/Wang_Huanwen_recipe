@@ -11,7 +11,7 @@ function queryReservationsForDay(day, successCallback) {
     });
 }
 
-function saveReservation(name, day, meal) {
+function saveReservation(name, day, meal, successCallback) {
     var reservation = new Reservation();
 
     reservation.set("personName", name);
@@ -19,10 +19,7 @@ function saveReservation(name, day, meal) {
     reservation.set("meal", meal);
 
     reservation.save(null, {
-        success: function(reservation) {
-            // Execute any logic that should take place after the object is saved.
-            alert('New object created with objectId: ' + reservation.id);
-        },
+        success: successCallback,
         error: function(reservation, error) {
             // Execute any logic that should take place if the save fails.
             // error is a Parse.Error with an error code and message.
@@ -34,9 +31,17 @@ function saveReservation(name, day, meal) {
 function showModalLoading() {
     $('#modal-loading').show();
     $('#modal-content').hide();
+    $('#modal-success').hide();
 }
 
 function showModalContent() {
     $('#modal-loading').hide();
     $('#modal-content').show();
+    $('#modal-success').hide();
+}
+
+function showModalSuccess() {
+    $('#modal-loading').hide();
+    $('#modal-content').hide();
+    $('#modal-success').show();
 }
