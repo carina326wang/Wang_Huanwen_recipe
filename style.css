@@ -77,13 +77,13 @@ body {
 	opacity: 0.7;
 	filter: alpha(opacity=70);/* For IE8 and earlier */
 	padding:10px;
-	width: 1024px;
+	width: 950px;
 	margin: 0 auto;
 }
 
 #container {
 	background-color: #feeff4;
-	width: 1024px;
+	width: 950px;
 	margin: 0 auto;
 	margin-top: 50px;
 	padding:10px;
@@ -122,7 +122,7 @@ body {
 
 .grid.front-row h2 {
 	font-size: 20px;
-	font-family: 'Indie Flower', Arial, sans-serif;
+	font-family: 'Coming Soon', Arial, sans-serif;
 	color: black;
 	margin-bottom: 20px;
 	border-top: 0px;
@@ -146,8 +146,8 @@ p {
 
 
 .availability img {
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	cursor: pointer;
 }
 
