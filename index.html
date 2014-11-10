@@ -3,18 +3,20 @@
 <head>
 <title>Carina's Space</title>
 <link href="style.css" rel="stylesheet" type="text/css" charset="utf-8">
-<link href='http://fonts.useso.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
-<link href='http://fonts.useso.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href="tipsy.css" rel="stylesheet" type="text/css" charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
 <script src="https://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
 <script src="jquery-1.11.1.min.js"></script>
+<script src="jquery.tipsy.js"></script>
 
 </head>
 
 <body>
 
 <div class="greeting">
-	<h1>Book me early~ See you all in January *^_^* <br>-XOXO Huan</h1>
+	<h1>Book me early~ See you all in January *^<span id="mouth">_</span>^* <br>-XOXO Huan</h1>
 	<p>Please note that lunch is 12pm to 2pm, afternoon tea 3pm to 5pm, and dinner 6pm to 9pm. <br>If multiple time periods are desired, please specify in message area.</p>
 </div>
 	
@@ -265,6 +267,18 @@
 	</div>
 </div>
 
+<div id="login" class="modalDialog">
+
+	<form action="">
+		<label for="login-username">Username:</label> <input id="login-username" type="text"><br>
+		<label for="login-password">Password:</label> <input id="login-password" type="password"><br>
+
+		<div>
+			<button type="button" id="login-submit">Login</button>
+		</div>
+	</form>
+</div>
+
 <script>
 Parse.initialize("rsiGE2TI0oCXADiQTwUzB6h6cTiAWYUtLDDGTMwP", "wjSaS0qFpgQa31dsaroGUKd880pRrhvAPRThZ8fU");
 </script>
@@ -329,7 +343,31 @@ Parse.initialize("rsiGE2TI0oCXADiQTwUzB6h6cTiAWYUtLDDGTMwP", "wjSaS0qFpgQa31dsar
 		}
 	});
 
+	$('#mouth').dblclick(function() {
+		window.location.hash = 'login';
+	});
+
+	$('#login-submit').click(function() {
+		var username = $('#login-username').val();
+		var password = $('#login-password').val();
+		Parse.User.logIn(username, password, {
+			success: function(user) {
+				// Do stuff after successful login.
+				refreshCalendarReservations();
+				window.location.hash = 'close';
+			},
+			error: function(user, error) {
+				// The login failed. Check error to see why.
+				alert('error: ' + error.message);
+			}
+		});
+	});
+
 	refreshCalendarReservations();
+
+	window.onload = function() {
+		window.location.hash = '';
+	}
 </script>
 
 </body>

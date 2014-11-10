@@ -1,4 +1,5 @@
 var Reservation = Parse.Object.extend("Reservation");
+var Friend = Parse.Object.extend("Friend");
 
 function queryReservationsForDay(day, successCallback) {
     var query = new Parse.Query(Reservation);
@@ -30,12 +31,24 @@ function refreshCalendarReservations() {
             var $mealImg = $('.availability[data-day=' + day + '] img').eq(mealIndex);
             $mealImg.unbind('click');
             $mealImg.css('opacity', 0.2);
+
+            var friend = reservation.get('friend');
+            if (friend) {
+                $mealImg.attr('title', friend.get('name'));
+                $mealImg.tipsy({gravity: 's'});
+            }
         }
     });
 }
 
 function queryAllReservations(successCallback) {
     var query = new Parse.Query(Reservation);
+
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        query.include(['friend']);
+    }
+
     query.find({
         success: successCallback,
         error: function(error) {
@@ -45,18 +58,23 @@ function queryAllReservations(successCallback) {
 }
 
 function saveReservation(name, day, meal, successCallback) {
-    var reservation = new Reservation();
+    var friend = new Friend();
+    friend.set("name", name);
+    friend.save(null, {
+        success: function(friend) {
+            var reservation = new Reservation();
+            reservation.set("friend", friend);
+            reservation.set("date", new Date('Jan ' + day + ', 2015 08:00 GMT+08:00'));
+            reservation.set("meal", meal);
 
-    reservation.set("personName", name);
-    reservation.set("date", new Date('Jan ' + day + ', 2015 08:00 GMT+08:00'));
-    reservation.set("meal", meal);
-
-    reservation.save(null, {
-        success: successCallback,
-        error: function(reservation, error) {
-            // Execute any logic that should take place if the save fails.
-            // error is a Parse.Error with an error code and message.
-            alert('Failed to create new object, with error code: ' + error.message);
+            reservation.save(null, {
+                success: successCallback,
+                error: function(reservation, error) {
+                    // Execute any logic that should take place if the save fails.
+                    // error is a Parse.Error with an error code and message.
+                    alert('Failed to create new object, with error code: ' + error.message);
+                }
+            });
         }
     });
 }
