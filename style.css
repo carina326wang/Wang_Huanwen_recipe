@@ -74,7 +74,7 @@ body {
 
 .greeting {
 	background-color: #ffffff;
-	opacity: 0.7;
+	opacity: 0.8;
 	filter: alpha(opacity=70);/* For IE8 and earlier */
 	padding:10px;
 	width: 950px;
@@ -123,13 +123,14 @@ body {
 .grid.front-row h2 {
 	font-size: 20px;
 	font-family: 'Coming Soon', Arial, sans-serif;
-	color: black;
+	color: #3f1313;
 	margin-bottom: 20px;
 	border-top: 0px;
 }
 
 h1 {
 	font-family: 'Indie Flower', Arial, sans-serif;
+	color: #3f1313;
 	font-size: 35px;
 	line-height: 1.3em;
 	margin-left: 30px;
@@ -138,10 +139,10 @@ h1 {
 
 p {
 	font-family: 'Coming Soon', Arial, sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 1.3em;
 	margin-left: 30px;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 
