@@ -331,11 +331,12 @@ Parse.initialize("rsiGE2TI0oCXADiQTwUzB6h6cTiAWYUtLDDGTMwP", "wjSaS0qFpgQa31dsar
 		var $selectedRadio = $('#modal-content input[name=meal]:checked');
 		if (name.length && $selectedRadio.length) {
 			var meal = $selectedRadio.val();
-			
+			var message = $('#modal-message').val();
+
 			$('#modal-content input').prop('disabled', true);
 			$('#modal-content button').prop('disabled', true).css('opacity', 0.4);
 
-			saveReservation(name, availabilityDay, meal, function(reservation) {
+			saveReservation(name, availabilityDay, meal, message, function(reservation) {
 				var $content = $('#modal-content');
 				showModalSuccess();
 				refreshCalendarReservations();

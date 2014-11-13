@@ -34,7 +34,8 @@ function refreshCalendarReservations() {
 
             var friend = reservation.get('friend');
             if (friend) {
-                $mealImg.attr('title', friend.get('name'));
+                var message = friend.get('message');
+                $mealImg.attr('title', friend.get('name') + (message ? (': "' + message + '"') : ''));
                 $mealImg.tipsy({gravity: 's'});
             }
         }
@@ -57,9 +58,10 @@ function queryAllReservations(successCallback) {
     });
 }
 
-function saveReservation(name, day, meal, successCallback) {
+function saveReservation(name, day, meal, message, successCallback) {
     var friend = new Friend();
     friend.set("name", name);
+    friend.set("message", message);
     friend.save(null, {
         success: function(friend) {
             var reservation = new Reservation();
