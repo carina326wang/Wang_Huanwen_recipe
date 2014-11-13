@@ -33,7 +33,7 @@ function refreshCalendarReservations() {
             $mealImg.css('opacity', 0.2);
 
             var friend = reservation.get('friend');
-            if (friend) {
+            if (friend && friend.get('name')) {
                 var message = friend.get('message');
                 $mealImg.attr('title', friend.get('name') + (message ? (': "' + message + '"') : ''));
                 $mealImg.tipsy({gravity: 's'});
